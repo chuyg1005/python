@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Meghna One page parallax responsive HTML Template ">
+    <script src="../static/js/echarts.min.js"></script>
+    <script src="../static/js/ecStat.min.js"></script>
+    <meta name="author" content="Muhammad Morshed">
+
+    <title>豆瓣电影评分分析</title>
+
+    <!-- Mobile Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.png"/>
+
+    <!-- CSS
+    ================================================== -->
+    <!-- Fontawesome Icon font -->
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="../static/css/animate.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="../static/css/owl.carousel.css">
+    <!-- Grid Component css -->
+    <link rel="stylesheet" href="../static/css/component.css">
+    <!-- Slit Slider css -->
+    <link rel="stylesheet" href="../static/css/slit-slider.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../static/css/main.css">
+    <!-- Media Queries -->
+    <link rel="stylesheet" href="../static/css/media-queries.css">
+
+    <!--
+    Google Font
+    =========================== -->
+
+    <!-- Oswald / Title Font -->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <!-- Ubuntu / Body Font -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+
+    <!-- Modernizer Script for old Browsers -->
+    <script src="../static/js/modernizr-2.6.2.min.js"></script>
+
+
+</head>
+
+<body id="body">
+
+<!--
+Start Preloader
+==================================== -->
+<div id="loading-mask">
+    <div class="loading-img">
+        <img alt="Meghna Preloader" src="../static/img/preloader.gif"/>
+    </div>
+</div>
+<!--
+End Preloader
+==================================== -->
+
+<!--
+Welcome Slider
+==================================== -->
+
+<!--
+Fixed Navigation
+==================================== -->
+<header id="navigation" class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- responsive nav button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /responsive nav button -->
+
+            <!-- logo -->
+            <a class="navbar-brand" href="#body">
+                <h1 id="logo">
+                    <img src="../static/img/logo-meghna.png" alt="Meghna"/>
+                </h1>
+            </a>
+            <!-- /logo -->
+        </div>
+
+        <!-- main nav -->
+        <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+            <ul id="nav" class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/data">Data</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+                <li><a href="/wc">Word Cloud</a></li>
+            </ul>
+        </nav>
+        <!-- /main nav -->
+
+    </div>
+</header>
+<!--
+End Fixed Navigation
+==================================== -->
+
+
+<!-- Start Services Section
+==================================== -->
+
+<script type="text/javascript">
+	function show1(){
+		var obj_div = document.getElementById("block1");
+		obj_div.style.display = (obj_div.style.display=='none')?'block':'none';
+	}
+	function show2(){
+		var obj_div = document.getElementById("block2");
+		obj_div.style.display = (obj_div.style.display=='none')?'block':'none';
+	}
+	function show3(){
+		var obj_div = document.getElementById("block3");
+		obj_div.style.display = (obj_div.style.display=='none')?'block':'none';
+	}
+	function show4(){
+		var obj_div = document.getElementById("block4");
+		obj_div.style.display = (obj_div.style.display=='none')?'block':'none';
+	}
+	function show5(){
+		var obj_div = document.getElementById("block5");
+		obj_div.style.display = (obj_div.style.display=='none')?'block':'none';
+	}
+</script>
+
+<section id="services" class="bg-one">
+    <div class="container">
+        <div class="row">
+
+            <!-- section title -->
+            <div class="title text-center wow fadeIn" data-wow-duration="500ms">
+                <h2>电影 <span class="color">数据分析</span></h2>
+                <div class="border"></div>
+            </div>
+            <!-- /section title -->
+
+            {# part1 #}
+            <div>
+	`           <a href="javascript:show1()" style="font-weight:bold; font-size: 32px; color:#9aad55">
+                国家/地区<span class="color" style="color:#425f7a">数据分析</span></a>
+            </div>
+
+            <div  id="block1">
+                <div style="height: 60px"></div>
+                <div id="country" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+                <div id="ratio" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+                <div id="country_rank" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+            </div>
+
+            <div style="height: 60px"></div>
+
+            {# part2 #}
+            <div>
+	`           <a href="javascript:show2()" style="font-weight:bold; font-size: 32px; color:#9aad55">
+                演员/导演<span class="color" style="color:#425f7a">数据分析</span></a>
+            </div>
+
+            <div  id="block2">
+                <div style="height: 60px"></div>
+                <div id="actor" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+                <div id="director" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+            </div>
+
+            <div style="height: 60px"></div>
+
+            {# part3 #}
+            <div>
+	`           <a href="javascript:show3()" style="font-weight:bold; font-size: 32px; color:#9aad55">
+                电影类型<span class="color" style="color:#425f7a">数据分析</span></a>
+            </div>
+
+            <div  id="block3">
+                <div style="height: 60px"></div>
+                <div id="genre_scores" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+                <div id="genre_scores2" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+            </div>
+
+            <div style="height: 60px"></div>
+
+            {# part4 #}
+            <div>
+	`           <a href="javascript:show4()" style="font-weight:bold; font-size: 32px; color:#9aad55">
+                电影年份<span class="color" style="color:#425f7a">数据分析</span></a>
+            </div>
+
+            <div  id="block4">
+                <div style="height: 60px"></div>
+                <div id="score" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+                <div id="year" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+                <div id="year_scores" style="width: 100%; height: 400px"></div>
+                <div style="height: 60px"></div>
+            </div>
+
+            <div style="height: 60px"></div>
+
+            {# part5 #}
+            <div>
+	`           <a href="javascript:show5()" style="font-weight:bold; font-size: 32px; color:#9aad55">
+                其他<span class="color" style="color:#425f7a">数据分析</span></a>
+            </div>
+
+            <div   style="text-align: center" id="block5">
+                <div style="height: 60px"></div>
+                <div ><img src="../static/img/pic1.png" width="60%"></div>
+                <div style="height: 60px"></div>
+                <div ><img src="../static/img/pic2.png" width="60%">></div>
+                <div style="height: 60px"></div>
+                <div ><img src="../static/img/pic3.png" width="60%">></div>
+                <div style="height: 60px"></div>
+                <div ><img src="../static/img/pic4.png" width="60%">></div>
+                <div style="height: 60px"></div>
+            </div>
+
+        </div>        <!-- End row -->
+    </div>    <!-- End container -->
+</section>   <!-- End section -->
+
+<!-- Back to Top
+============================== -->
+<a href="javascript:;" id="scrollUp">
+    <i class="fa fa-angle-up fa-2x"></i>
+</a>
+
+<!-- end Footer Area
+========================================== -->
+
+<!--
+Essential Scripts
+=====================================-->
+
+<!-- Main jQuery -->
+<script src="../static/js/jquery-1.11.0.min.js"></script>
+<!-- Bootstrap 3.1 -->
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Slitslider -->
+<script src="../static/js/jquery.slitslider.js"></script>
+<script src="../static/js/jquery.ba-cond.min.js"></script>
+<!-- Parallax -->
+<script src="../static/js/jquery.parallax-1.1.3.js"></script>
+<!-- Owl Carousel -->
+<script src="../static/js/owl.carousel.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="../static/js/jquery.mixitup.min.js"></script>
+<!-- Custom Scrollbar -->
+<script src="../static/js/jquery.nicescroll.min.js"></script>
+<!-- Jappear js -->
+<script src="../static/js/jquery.appear.js"></script>
+<!-- Pie Chart -->
+<script src="../static/js/easyPieChart.js"></script>
+<!-- jQuery Easing -->
+<script src="../static/js/jquery.easing-1.3.pack.js"></script>
+<!-- tweetie.min -->
+<script src="../static/js/tweetie.min.js"></script>
+
+<!-- Highlight menu item -->
+<script src="../static/js/jquery.nav.js"></script>
+<!-- Sticky Nav -->
+<script src="../static/js/jquery.sticky.js"></script>
+<!-- Number Counter Script -->
+<script src="../static/js/jquery.countTo.js"></script>
+<!-- wow.min Script -->
+<script src="../static/js/wow.min.js"></script>
+<!-- For video responsive -->
+<script src="../static/js/jquery.fitvids.js"></script>
+<!-- Grid js -->
+<script src="../static/js/grid.js"></script>
+<!-- Custom js -->
+<script src="../static/js/custom.js"></script>
+
+{# part1 #}
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('country'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        color: ['#2f89cf'],
+        title: {    // 主标题
+            text: '豆瓣Top250前20国家/地区电影数',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        xAxis: {
+            type: 'category',
+            data: {{ country['x']|tojson }},    // x轴数据
+            axisLabel: {
+                color: 'white', // 修改x轴字体颜色
+                rotate: 90  // 旋转角度
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                color: 'white', // y轴字体颜色
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)' // 设置y轴分割线的颜色（.1为透明度）
+                }
+            }
+        },
+        series: [
+            {
+                name: '',
+                data: {{ country['y'] }},   // y轴数据
+                type: 'bar',
+                barWidth: '35%', // 设置柱子的宽度
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('ratio'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        color: ['#2f89cf'],
+        title: {    // 主标题
+            text: '豆瓣Top250各个国家/地区电影占比',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'item',
+            formatter: '{b} : {c} ({d}%)'
+        },
+        color:['#667cbd','#594678','#66657d','#547da1','#bbe2e8','#bad1e6','#93bfa5','#4c735c','#b1b35d'],
+        series: [
+            {
+                name: '',
+                data: [{value:{{ country['y'][0]}}, name: '{{ country['x'][0]}}'},
+                    {value:{{ country['y'][4]}}, name: '{{ country['x'][4]}}'},
+                    {value:{{ country['y'][5]}}, name: '{{ country['x'][5]}}'},
+                    {value:{{ country['y'][6]}}, name: '{{ country['x'][6]}}'},
+                    {value:{{ country['y'][7]}}, name: '{{ country['x'][7]}}'},
+                    {value:{{ country['y'][1]}}, name: '{{ country['x'][1]}}'},
+                    {value:{{ country['y'][2]}}, name: '{{ country['x'][2]}}'},
+                    {value:{{ country['y'][3]}}, name: '{{ country['x'][3]}}'},
+                    {
+                        value:{{ 250-country['y'][0]-country['y'][1]-country['y'][2]-country['y'][3]-country['y'][4]
+                             -country['y'][5]-country['y'][6]-country['y'][7] }}, name: '其他'
+                    },],   // y轴数据
+                type: 'pie',
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('country_rank'))
+    // 指定图表的配置项和数据
+    var option = {
+        color: ['#2f89cf'],
+        title: {    // 主标题
+            text: '豆瓣Top250占比前10国家均分/最高分/最低分分析',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+                orient: 'horizontal', // 'vertical'
+                x: 'right', // 'center' | 'left' | {number},
+                y: 'top', // 'center' | 'bottom' | {number}
+                padding:[0,150,0,0], //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
+                data:['均分','最高分','最低分'],
+                selected:{'均分':false}
+        },
+        xAxis: {
+            type: 'category',
+            data: {{ country_rank['x1']|tojson }},    // x轴数据
+            axisLabel: {
+                color: 'white', // 修改x轴字体颜色
+                rotate: 90  // 旋转角度
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                color: 'white', // y轴字体颜色
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)' // 设置y轴分割线的颜色（.1为透明度）
+                }
+            }
+        },
+        series: [
+            {
+                name: '均分',
+                color:['#35b080'],
+                data: {{ country_rank['x2'] }},   // y轴数据
+                type: 'bar',
+                barWidth: '25%', // 设置柱子的宽度
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            },
+            {
+                name: '最高分',
+                color:['#c48766'],
+                data: {{ country_rank['x3'] }},   // y轴数据
+                type: 'bar',
+                barWidth: '15%', // 设置柱子的宽度
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            },
+            {
+                name: '最低分',
+                color:['#92789e'],
+                data: {{ country_rank['x4'] }},   // y轴数据
+                type: 'bar',
+                barWidth: '15%', // 设置柱子的宽度
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+{# part2 #}
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('actor'));
+
+    var myColor = ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6'];
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '豆瓣Top250出场率前10演员',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {
+            show: true
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01],
+            show: false // 不显示x轴
+        },
+        yAxis: {
+            type: 'category',
+            data: {{ actor['x']|tojson }},
+            axisLabel: {
+                color: 'white'  // y轴刻度标签设置为白色
+            }
+        },
+        series: [
+            {
+                name: '出场率',
+                type: 'bar',
+                data: {{ actor['y'] }},
+                itemStyle: {
+                    barBorderRadius: 20, // 修改为圆角
+                    // 为每个柱子设置不同的颜色（由于柱子数量不确定，因此需要使用函数）
+                    color: function (params) {
+                        return myColor[params.dataIndex % myColor.length];
+                    }
+                },
+                barCategoryGap: 50, // 修改柱子之间的距离
+                barWidth: 15,    // 修改柱子的宽度
+                // 显示柱子内的文字
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'inside'
+                    }
+                }
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('director'));
+
+    var myCOlor = [
+        '#8A2BE2', '#FFE4C4', '#DAA520', '#FAF0E6', '#808000', '#4B0082'
+    ];
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {    // 主标题
+            text: '豆瓣Top250出场率前20导演',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+                orient: 'vertical', // 'vertical'
+                x: 'right', // 'center' | 'left' | {number},
+                y: 'top', // 'center' | 'bottom' | {number}
+                padding:[0,150,0,0], //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
+                data:[
+                    {name:'出场次数',
+                        color:'white'},
+                    '均分'],
+        },
+        xAxis: {
+            type: 'category',
+            data: {{ director['x']|tojson }},    // x轴数据
+            axisLabel: {
+                color: 'white', // 修改x轴字体颜色
+                rotate: 90  // 旋转角度
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                color: 'white', // y轴字体颜色
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)' // 设置y轴分割线的颜色（.1为透明度）
+                }
+            }
+        },
+        series: [
+            {
+                name:'出场次数',
+                data: {{ director['y'] }},   // y轴数据
+                type: 'bar',
+                barWidth: '35%', // 设置柱子的宽度
+                itemStyle: {
+                    barBorderRadius: 5,  // 设置柱子的圆角
+                    color: function (params) {
+                        return myColor[params.dataIndex % myColor.length];
+                    }
+                }
+            },
+            {
+                name:'均分',
+                data: {{ director['z'] }},   // y轴数据
+                type: 'line',
+                barWidth: '35%',// 设置柱子的宽度
+                color: '#f0f095'//
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+{# part3 #}
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('genre_scores'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        color: ['#2f89cf'],
+        title: {    // 主标题
+            text: '豆瓣Top250种类数量前15',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        xAxis: {
+            type: 'category',
+            data: {{ genre1['x1']|tojson }},    // x轴数据
+            axisLabel: {
+                color: 'white', // 修改x轴字体颜色
+            }
+        },
+        yAxis: {
+            scale: true,
+            type: 'value',
+            axisLabel: {
+                color: 'white', // y轴字体颜色
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)' // 设置y轴分割线的颜色（.1为透明度）
+                }
+            }
+        },
+        series: [
+            {
+                name: '电影数',
+                color:['#35b080'],
+                data: {{ genre1['x2'] }},   // y轴数据
+                type: 'line',
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('genre_scores2'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        color: ['#4c63a8'],
+        title: {    // 主标题
+            text: '豆瓣Top250种类数量前15均分',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        xAxis: {
+            type: 'category',
+            data: {{ genre1['x1']|tojson }},    // x轴数据
+            axisLabel: {
+                color: 'white', // 修改x轴字体颜色
+            }
+        },
+        yAxis: {
+            scale: true,
+            type: 'value',
+            axisLabel: {
+                color: 'white', // y轴字体颜色
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)' // 设置y轴分割线的颜色（.1为透明度）
+                }
+            }
+        },
+        series: [
+            {
+                name: '均分',
+                color:['#4c63a8'],
+                data: {{ genre1['x3'] }},   // y轴数据
+                type: 'line',
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+{# part4 #}
+<script type="text/javascript">
+    var bins = ecStat.histogram({{ score }});
+    var myChart = echarts.init(document.getElementById('score'));
+    var option = {
+        color: ['rgb(25, 183, 207)'],
+        title: {
+            text: '豆瓣Top250评分分布直方图',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        xAxis: [{
+            type: 'value',
+            //这个一定要设，不然barWidth和bins对应不上
+            scale: true,
+            axisLabel: {
+                color: 'white'
+            }
+        }],
+        yAxis: [{
+            type: 'value',
+            axisLabel: {
+                color: 'white'
+            }
+        }],
+        series: [{
+            type: 'bar',
+            barWidth: '99.3%',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                }
+            },
+            data: bins.data
+        }]
+    };
+    myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+    var bins = ecStat.histogram({{ year }});
+    var myChart = echarts.init(document.getElementById('year'));
+    var option = {
+        color: ['#8A2BE2'],
+        title: {
+            text: '豆瓣Top250年份分布直方图',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        xAxis: [{
+            type: 'value',
+            //这个一定要设，不然barWidth和bins对应不上
+            scale: true,
+            axisLabel: {
+                color: 'white'
+            }
+        }],
+        yAxis: [{
+            type: 'value',
+            axisLabel: {
+                color: 'white'
+            }
+        }],
+        series: [{
+            type: 'bar',
+            barWidth: '99.3%',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                }
+            },
+            data: bins.data
+        }]
+    };
+    myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('year_scores'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        color: ['#2f89cf'],
+        title: {    // 主标题
+            text: '豆瓣Top250按年份每年均分/最高分/最低分分析',
+            textStyle: {
+                color: 'white'
+            }
+        },
+        tooltip: {  // 显示提示信息（背景色）
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+                orient: 'horizontal', // 'vertical'
+                x: 'right', // 'center' | 'left' | {number},
+                y: 'top', // 'center' | 'bottom' | {number}
+                padding:[0,150,0,0], //可设定图例[距上方距离，距右方距离，距下方距离，距左方距离]
+                data:['均分','最高分','最低分'],
+        },
+        xAxis: {
+            type: 'category',
+            data: {{ year_score['x1']|tojson }},    // x轴数据
+            axisLabel: {
+                color: 'white', // 修改x轴字体颜色
+                rotate: 90  // 旋转角度
+            }
+        },
+        yAxis: {
+            scale: true,
+            type: 'value',
+            axisLabel: {
+                color: 'white', // y轴字体颜色
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'rgba(255,255,255,.1)' // 设置y轴分割线的颜色（.1为透明度）
+                }
+            }
+        },
+        series: [
+            {
+                name: '均分',
+                color:['#35b080'],
+                data: {{ year_score['x2'] }},   // y轴数据
+                type: 'line',
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            },
+            {
+                name: '最高分',
+                color:['#c48766'],
+                data: {{ year_score['x3'] }},   // y轴数据
+                type: 'line',
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            },
+            {
+                name: '最低分',
+                color:['#92789e'],
+                data: {{ year_score['x4'] }},   // y轴数据
+                type: 'line',
+                itemStyle: {
+                    barBorderRadius: 5  // 设置柱子的圆角
+                }
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>
